@@ -24,5 +24,11 @@ if [[ -n $MARIADB_EXTRA_FLAGS ]]; then
     ARGS+=" $MARIADB_EXTRA_FLAGS"
 fi
 
+# by nozino
+# configure command line flags for galera clustering
+if [[ -n $MARIADB_GALERA_FIRST_NODE ]]; then
+    ARGS+=" --wsrep-new-cluster --wsrep_start_position=00000000-0000-0000-0000-000000000000:-1"
+fi
+
 info "Starting ${DAEMON}..."
 exec ${EXEC} ${ARGS}

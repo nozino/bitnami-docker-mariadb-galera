@@ -1,5 +1,5 @@
 FROM bitnami/minideb-extras:jessie-r24
-LABEL maintainer "Bitnami <containers@bitnami.com>"
+LABEL maintainer "nozino nozino_AT_gmail.com>"
 
 ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
     BITNAMI_PKG_EXTRA_DIRS="/bitnami/mariadb/conf" \
@@ -27,6 +27,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MARIADB_ROOT_PASSWORD="" \
     MARIADB_ROOT_USER="root" \
     MARIADB_USER="" \
+    MARIADB_GALERA_FIRST_NODE="" \
     PATH="/opt/bitnami/mariadb/bin:/opt/bitnami/mariadb/sbin:$PATH"
 
 EXPOSE 3306
